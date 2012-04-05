@@ -1,0 +1,15 @@
+{
+  "name": "simplerouter",
+  "version": "0.1.0",
+  "description": "An awfully simple regex parameter based HTTP router",
+  "keywords": ["http", "router"],
+  "author": "Tobias Muellerleile <tobias@muellerleile.net> (http://tobias.muellerleile.net)",
+  "main": "index",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tmuellerleile/node-simplerouter.git"
+  },
+  "engines": {
+    "node": "*"
+  }
+}

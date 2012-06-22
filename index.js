@@ -16,7 +16,7 @@ var simplerouter = function () {
         if (typeof route.method === 'string' && request.method !== route.method) {
           return false;
         }
-        else if (typeof route.method === 'object' && route.method.indexOf(request.method) == -1) {
+        else f (typeof route.method === 'object' && route.method.indexOf(request.method) === -1) {
           return false;
         }
       }
@@ -47,7 +47,7 @@ var simplerouter = function () {
         response.end();
       }
     }
-    // one route matches -> nothing to be done since response handling is done by route.action...
+    // one route matches -> nothing to be done since response handling is done by corresponding route.action...
   };
   that = requestListener;
 
@@ -78,11 +78,14 @@ var simplerouter = function () {
   };
   that.setDefaultError = setDefaultError;
 
+
+  // init with optionally given routes:
   if (arguments.length > 0) {
     for (var i = 0; i < arguments.length; i++) {
       addRoutes(arguments[i]);
     }
   }
+
 
   return that;
 };

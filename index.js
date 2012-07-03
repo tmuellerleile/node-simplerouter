@@ -16,7 +16,7 @@ var simplerouter = function () {
         if (typeof route.method === 'string' && request.method !== route.method) {
           return false;
         }
-        else f (typeof route.method === 'object' && route.method.indexOf(request.method) === -1) {
+        else if (typeof route.method === 'object' && route.method.indexOf(request.method) === -1) {
           return false;
         }
       }

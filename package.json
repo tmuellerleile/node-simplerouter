@@ -4,6 +4,7 @@
   "description": "An awfully simple regex parameter based HTTP router",
   "keywords": ["http", "router"],
   "author": "Tobias Muellerleile <tobias@muellerleile.net> (http://tobias.muellerleile.net)",
+  "license": "MIT",
   "main": "index",
   "repository": {
     "type": "git",

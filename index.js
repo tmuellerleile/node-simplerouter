@@ -1,22 +1,24 @@
 var simplerouter = function () {
   var URL = require('url');
 
-  var routes = [],
-      defaultRoute,
-      defaultError = {
-        statusCode: 501,
-        statusMessage: 'Not Implemented'
-      },
-      that;
+  var routes = [];
+  var defaultRoute;
+  var defaultError = {
+    statusCode: 501,
+    statusMessage: 'Not Implemented'
+  };
+  var that;
 
   var requestListener = function (request, response) {
     var parsedUrl = URL.parse(request.url);
     if (!routes.some(function (route, ix) {
       if (route.method !== undefined) {
-        if (typeof route.method === 'string' && request.method !== route.method) {
+        if (typeof route.method === 'string' &&
+            request.method !== route.method) {
           return false;
         }
-        else if (typeof route.method === 'object' && route.method.indexOf(request.method) === -1) {
+        else if (typeof route.method === 'object' &&
+            route.method.indexOf(request.method) === -1) {
           return false;
         }
       }
@@ -47,14 +49,16 @@ var simplerouter = function () {
         response.end();
       }
     }
-    // one route matches -> nothing to be done since response handling is done by corresponding route.action...
+    // one route matches -> nothing to be done since response handling is done
+    // by corresponding route.action...
   };
   that = requestListener;
 
   // PUBLIC METHODS:
   var addRoutes = function (rs) {
     var i;
-    if (typeof rs === 'object' && rs.constructor !== Array) { // single route object:
+    if (typeof rs === 'object' && rs.constructor !== Array) {
+      // single route object:
       routes.push(rs);
     }
     else { // [] of route objects:
